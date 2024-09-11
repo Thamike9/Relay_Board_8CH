@@ -27,6 +27,17 @@ void setup()
   pinMode(LED_PIN, OUTPUT);
 
   // Set relays and LED to LOW (relays off, LED off) initially
+  digitalWrite(RELAY1_PIN, HIGH);
+  digitalWrite(RELAY2_PIN, HIGH);
+  digitalWrite(RELAY3_PIN, HIGH);
+  digitalWrite(RELAY4_PIN, HIGH);
+  digitalWrite(RELAY5_PIN, HIGH);
+  digitalWrite(RELAY6_PIN, HIGH);
+  digitalWrite(RELAY7_PIN, HIGH);
+  digitalWrite(RELAY8_PIN, HIGH);
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+
   digitalWrite(RELAY1_PIN, LOW);
   digitalWrite(RELAY2_PIN, LOW);
   digitalWrite(RELAY3_PIN, LOW);
@@ -49,76 +60,88 @@ void loop()
     String command = Serial.readStringUntil('\n');
     command.trim(); // Remove any unwanted whitespace
 
-    if (command == "RELAY1_ON")
+    if (command == "11")
     {
       digitalWrite(RELAY1_PIN, HIGH);
     }
-    else if (command == "RELAY1_OFF")
+    else if (command == "10")
     {
       digitalWrite(RELAY1_PIN, LOW);
     }
-    else if (command == "RELAY2_ON")
+    else if (command == "21")
     {
       digitalWrite(RELAY2_PIN, HIGH);
     }
-    else if (command == "RELAY2_OFF")
+    else if (command == "20")
     {
       digitalWrite(RELAY2_PIN, LOW);
     }
-    else if (command == "RELAY3_ON")
+    else if (command == "31")
     {
       digitalWrite(RELAY3_PIN, HIGH);
     }
-    else if (command == "RELAY3_OFF")
+    else if (command == "30")
     {
       digitalWrite(RELAY3_PIN, LOW);
     }
-    else if (command == "RELAY4_ON")
+    else if (command == "41")
     {
       digitalWrite(RELAY4_PIN, HIGH);
     }
-    else if (command == "RELAY4_OFF")
+    else if (command == "40")
     {
       digitalWrite(RELAY4_PIN, LOW);
     }
-    else if (command == "RELAY5_ON")
+    else if (command == "51")
     {
       digitalWrite(RELAY5_PIN, HIGH);
     }
-    else if (command == "RELAY5_OFF")
+    else if (command == "50")
     {
       digitalWrite(RELAY5_PIN, LOW);
     }
-    else if (command == "RELAY6_ON")
+    else if (command == "61")
     {
       digitalWrite(RELAY6_PIN, HIGH);
     }
-    else if (command == "RELAY6_OFF")
+    else if (command == "60")
     {
       digitalWrite(RELAY6_PIN, LOW);
     }
-    else if (command == "RELAY7_ON")
+    else if (command == "71")
     {
       digitalWrite(RELAY7_PIN, HIGH);
     }
-    else if (command == "RELAY7_OFF")
+    else if (command == "70")
     {
       digitalWrite(RELAY7_PIN, LOW);
     }
-    else if (command == "RELAY8_ON")
+    else if (command == "81")
     {
       digitalWrite(RELAY8_PIN, HIGH);
     }
-    else if (command == "RELAY8_OFF")
+    else if (command == "80")
     {
       digitalWrite(RELAY8_PIN, LOW);
     }
-    else if (command == "LED_ON")
+    else if (command == "91")
     {
       digitalWrite(LED_PIN, HIGH);
     }
-    else if (command == "LED_OFF")
+    else if (command == "90")
     {
+      digitalWrite(LED_PIN, LOW);
+    }
+    else if (command == "0")
+    {
+      digitalWrite(RELAY1_PIN, LOW);
+      digitalWrite(RELAY2_PIN, LOW);
+      digitalWrite(RELAY3_PIN, LOW);
+      digitalWrite(RELAY4_PIN, LOW);
+      digitalWrite(RELAY5_PIN, LOW);
+      digitalWrite(RELAY6_PIN, LOW);
+      digitalWrite(RELAY7_PIN, LOW);
+      digitalWrite(RELAY8_PIN, LOW);
       digitalWrite(LED_PIN, LOW);
     }
     else
